@@ -1,11 +1,37 @@
 import { createRoot } from 'react-dom/client';
 import './index.css';
 import Sidebar from './components/Sidebar';
+import { useState } from 'react';
 
 const App = () => {
-  return(
-    <div className='w-full h-full bg-zinc-800'>
-      <Sidebar />
+
+  const [selectedPage, setSelectedPage] = useState('Copilot chat');
+
+  const renderPage = () => {
+    switch (selectedPage) {
+      case 'Copilot chat':
+        return <div className="text-white p-5">Ovo je Copilot Chat</div>;
+      case 'Pomodoro':
+        return <div className="text-white p-5">Ovo je Pomodoro</div>;
+      case 'Make a quiz':
+        return <div className="text-white p-5">Ovo je Quiz</div>;
+      case 'Flashcards':
+        return <div className="text-white p-5">Ovo su Flashcards</div>;
+      case 'Humanize text':
+        return <div className="text-white p-5">Humanize Text page</div>;
+      case 'Summarize text':
+        return <div className="text-white p-5">Summarize Text page</div>;
+      default:
+        return <div className="text-white p-5">Nema stranice</div>;
+    }
+  };
+
+  return (
+    <div className='flex w-full h-full bg-zinc-800'>
+      <Sidebar onSelect={setSelectedPage} />
+      <div className='w-4/5 h-full'>
+        {renderPage()}
+      </div>
     </div>
   );
 }
@@ -13,4 +39,4 @@ const App = () => {
 const container = document.getElementById('root');
 const root = createRoot(container);
 
-root.render(<App/>)
+root.render(<App />)
