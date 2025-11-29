@@ -10,13 +10,14 @@ if (started) {
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
-    icon: path.join(__dirname, '/assets/logo.png'),
+    width: 1920,
+    height: 1080,
+    icon: '/logo.png',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
     autoHideMenuBar: true,
+    //resizable: false,
   });
 
   // and load the index.html of the app.
