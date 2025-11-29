@@ -1,7 +1,9 @@
 import { createRoot } from 'react-dom/client';
 import './index.css';
 import Sidebar from './components/Sidebar';
+import Copilot from './components/Copilot';
 import { useState } from 'react';
+
 
 const App = () => {
 
@@ -10,7 +12,7 @@ const App = () => {
   const renderPage = () => {
     switch (selectedPage) {
       case 'Copilot chat':
-        return <div className="text-white p-5">Ovo je Copilot Chat</div>;
+        return <Copilot/>
       case 'Pomodoro':
         return <div className="text-white p-5">Ovo je Pomodoro</div>;
       case 'Make a quiz':
