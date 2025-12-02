@@ -4,6 +4,7 @@ import Sidebar from './components/Sidebar';
 import Copilot from './components/Copilot';
 import Pomodoro from './components/Pomodoro';
 import { useState } from 'react';
+import SmallPomodoroTimer from './components/SmallPomodoroTimer';
 
 
 const App = () => {
@@ -30,7 +31,8 @@ const App = () => {
   };
 
   return (
-    <div className='flex w-full h-full bg-zinc-800'>
+    <div className='relative flex w-full h-full bg-zinc-800'>
+      {selectedPage !== 'Pomodoro' && <SmallPomodoroTimer/>}
       <Sidebar onSelect={setSelectedPage} />
       <div className='w-4/5 h-full'>
         {renderPage()}
