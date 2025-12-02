@@ -2,19 +2,20 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import Sidebar from './components/Sidebar';
 import Copilot from './components/Copilot';
+import Pomodoro from './components/Pomodoro';
 import { useState } from 'react';
 
 
 const App = () => {
 
-  const [selectedPage, setSelectedPage] = useState('Copilot chat');
+  const [selectedPage, setSelectedPage] = useState('');
 
   const renderPage = () => {
     switch (selectedPage) {
       case 'Copilot chat':
         return <Copilot/>
       case 'Pomodoro':
-        return <div className="text-white p-5">Ovo je Pomodoro</div>;
+        return <Pomodoro/>
       case 'Make a quiz':
         return <div className="text-white p-5">Ovo je Quiz</div>;
       case 'Flashcards':
@@ -24,7 +25,7 @@ const App = () => {
       case 'Summarize text':
         return <div className="text-white p-5">Summarize Text page</div>;
       default:
-        return <div className="text-white p-5">Nema stranice</div>;
+        return <div className="w-full h-full flex justify-center items-center font-bold text-3xl text-white">Welcome to Student Copilot</div>;
     }
   };
 
