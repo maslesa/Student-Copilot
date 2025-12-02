@@ -33,7 +33,7 @@ const App = () => {
   return (
     <div className='relative flex w-full h-full bg-zinc-800'>
       {selectedPage !== 'Pomodoro' && <SmallPomodoroTimer/>}
-      <Sidebar onSelect={setSelectedPage} />
+      <Sidebar selected={selectedPage} onSelect={setSelectedPage} />
       <div className='w-4/5 h-full'>
         {renderPage()}
       </div>
