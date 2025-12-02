@@ -5,7 +5,7 @@ export default function Sidebar({onSelect, selected}){
     const navs = [
         { title: 'Copilot chat', image: '/logo.png' },
         { title: 'Pomodoro', image: '/pomodoro.png' },
-        { title: 'Make a quiz', image: '/quiz.png' },
+        { title: 'Generate quiz', image: '/quiz.png' },
         { title: 'Flashcards', image: '/flash-cards.png' },
         { title: 'Humanize text', image: '/humanize.png' },
         { title: 'Summarize text', image: '/summarize.png' },

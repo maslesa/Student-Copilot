@@ -5,11 +5,12 @@ import Copilot from './components/Copilot';
 import Pomodoro from './components/Pomodoro';
 import { useState } from 'react';
 import SmallPomodoroTimer from './components/SmallPomodoroTimer';
+import QuizMaker from './components/QuizMaker';
 
 
 const App = () => {
 
-  const [selectedPage, setSelectedPage] = useState('Pomodoro');
+  const [selectedPage, setSelectedPage] = useState('');
 
   const renderPage = () => {
     switch (selectedPage) {
@@ -17,8 +18,8 @@ const App = () => {
         return <Copilot/>
       case 'Pomodoro':
         return <Pomodoro/>
-      case 'Make a quiz':
-        return <div className="text-white p-5">Ovo je Quiz</div>;
+      case 'Generate quiz':
+        return <QuizMaker/>
       case 'Flashcards':
         return <div className="text-white p-5">Ovo su Flashcards</div>;
       case 'Humanize text':
